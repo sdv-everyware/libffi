@@ -66,8 +66,10 @@ genrule {
 cc_library {
     name: "libffi",
     defaults: ["no_bti"],
+    min_sdk_version: "29",
     host_supported: true,
     vendor_available: true,
+    product_available: true,
     cflags: [
         "-Wall",
         "-Werror",
@@ -143,6 +145,7 @@ cc_library {
     },
     apex_available: [
         "//apex_available:platform",
+        "//apex_available:anyapex",
         "com.android.virt",
     ],
 }
